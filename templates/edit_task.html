@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+<body>
+    <div class="background-image"></div> <!-- Background image -->
+    <div class="content-overlay"> <!-- Overlay -->
+        <div class="content-container"> <!-- Main content container -->
+            <h1>Edit Task</h1>
+            <form method="post">
+                Title: <input type="text" name="title" value="{{ task.title }}"><br>
+                Description: <input type="text" name="description" value="{{ task.description }}"><br>
+                Deadline: <input type="date" name="deadline" value="{{ task.deadline }}"><br>
+                High Priority: <input type="checkbox" name="priority" {% if task.priority == 'high' %}checked{% endif %}><br>
+                <input type="submit" value="Update Task" class="button">
+            </form>
+            <a href="/" class="button">Back to Task List</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

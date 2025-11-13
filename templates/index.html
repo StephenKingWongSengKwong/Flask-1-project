@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Task Manager</title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+<body>
+    <!-- Blurred background image -->
+    <div class="background-image"></div>
+
+    <!-- Main content container -->
+    <div class="content-container">
+        <h1>Task List</h1>
+        <a href="/add" class="button">Add New Task</a>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong> - (Due: {{ task.deadline }}, {{ task.remaining_days }} days remaining)
+                <div class="alert {{ task.urgency }}-alert">
+                    {% if task.urgency == 'high' %}
+                        Urgent: Only 1 day remaining!
+                    {% elif task.urgency == 'medium' %}
+                        Warning: Less than 3 days remaining!
+                    {% elif task.urgency == 'overdue' %}
+                        Overdue: Deadline passed!
+                    {% else %}
+                        Task on track.
+                    {% endif %}
+                </div>
+                [{{ task.priority }} priority]
+                <a href="/edit/{{ loop.index0 }}" class="edit-link">Edit</a>
+                <a href="/delete/{{ loop.index0 }}" class="delete-link">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

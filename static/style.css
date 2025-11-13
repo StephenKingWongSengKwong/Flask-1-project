@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Full viewport background image with blur effect */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('./project-management.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Main content container with transparent background */
+.content-container {
+    position: relative;
+    z-index: 10; /* Above the blurred background */
+    margin: 0 auto; /* Center the container */
+    max-width: 1000px; /* Set max-width for the content container */
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Task list styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Alert styles */
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #000000; /* Changed to black text */
+    font-weight: bold;
+}
+
+.high-alert {
+    background-color: #e67e22;
+}
+
+.medium-alert {
+    background-color: #2ecc71; /* Changed to green */
+    color: #000000; /* Ensures readable black text */
+}
+
+.overdue-alert {
+    background-color: #e74c3c;
+}
+
+
+
+
+
+
+/* Link styles */
+.edit-link, .delete-link {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #17a2b8;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.edit-link:hover, .delete-link:hover {
+    background-color: #138496;
+}
+
+/* Ensure text is readable over blurred image */
+.text-content {
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
